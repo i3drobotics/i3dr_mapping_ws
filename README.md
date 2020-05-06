@@ -24,10 +24,18 @@ wstool update
 Build workspace
 ```
 catkin init
-catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DGTSAM_USE_SYSTEM_EIGEN=ON -DBUILD_TESTS=OFF -DWITH_CUDA=ON -DWITH_I3DR_ALG=ON -DWITH_QT=ON
+catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DGTSAM_USE_SYSTEM_EIGEN=ON -DWITH_CUDA=ON -DWITH_I3DR_ALG=ON -DWITH_QT=ON
 catkin build
 ```
+
 *NOTE: This might take a while as it builds opencv from source (>1 hour on a good PC)*
+
+Currently unable to build tests when using master branch of gscam so if you need to build tests then switch to the develop branch, otherwise use build option -DBUILD_TESTS=OFF.
+See issue [here](https://github.com/MIT-SPARK/Kimera-VIO-ROS/issues/53)
+```
+cd PATH_TO_REPO/src/gscam/
+git checkout develop
+```
 
 # Run
 ## RealSense D435i
