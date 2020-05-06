@@ -21,9 +21,13 @@ wstool update
 ```
 
 # Build
+Build workspace
+```
 catkin init
 catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DGTSAM_USE_SYSTEM_EIGEN=ON -DBUILD_TESTS=OFF -DWITH_CUDA=ON -DWITH_I3DR_ALG=ON -DWITH_QT=ON
 catkin build
+```
+*NOTE: This might take a while as it builds opencv from source*
 
 # Run
 ## RealSense D435i
